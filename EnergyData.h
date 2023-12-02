@@ -15,7 +15,8 @@ public:
 	EnergyData(const std::string& file);
 	~EnergyData();
     void mergeSort(int year, string type);
-    void mergeSort(int year, string type);
+    void quickSort(int year, string type);
+	vector<pair(string, float)> states;
     void print();
     
 
@@ -26,6 +27,8 @@ private:
     EnergyDataPoint makeLineToDataPoint(string& line, vector<string>& headers);
     string quotRemover(string& str);
     //
+	vector<pair(string, float)> createList();
+	void merge(vector<pair(string, float)>);
 };
 
 EnergyData::EnergyData(const string& file) {
@@ -95,21 +98,30 @@ inline string EnergyData::quotRemover(string& str)
     return str.substr(1, str.length()-2);
 }
 
-    void EnergyData::mergeSort(int year, string type)
+
+vector<pair(string, float)> EnergyData::createList()
 {
-	vector<pair(string, float)> states;
 	for(auto i:dataPoints)
-	{
+{
 		if(i.Year == year)
 		{
 			states.push_back(make_pair(i.State,i.catData.find(type)));
 		}
 	}
+}
+
+void EnergyData::merge(vector<pair(string, float)>, int p, int q, int r)
+{
+
+}	
+
+void EnergyData::mergeSort(int year, string type)
+{
 
 	
 }
 
-    void EnergyData::mergeSort(int year, string type)
+void EnergyData::mergeSort(int year, string type)
 {
 	vector<pair(string, int)> states;
 }
