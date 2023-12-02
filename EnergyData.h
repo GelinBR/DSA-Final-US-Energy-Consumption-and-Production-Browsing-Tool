@@ -14,6 +14,8 @@ class EnergyData
 public:
 	EnergyData(const std::string& file);
 	~EnergyData();
+    void mergeSort(int year, int type);
+    void mergeSort(int year, int type);
     void print();
     
 
@@ -91,4 +93,14 @@ inline EnergyDataPoint EnergyData::makeLineToDataPoint(string& line, vector<stri
 inline string EnergyData::quotRemover(string& str)
 {
     return str.substr(1, str.length()-2);
+}
+
+    void EnergyData::mergeSort(int year, int type)
+{
+	
+}
+
+    void EnergyData::mergeSort(int year, int type)
+{
+
 }
