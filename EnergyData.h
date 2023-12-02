@@ -14,8 +14,8 @@ class EnergyData
 public:
 	EnergyData(const std::string& file);
 	~EnergyData();
-    void mergeSort(int year, int type);
-    void mergeSort(int year, int type);
+    void mergeSort(int year, string type);
+    void mergeSort(int year, string type);
     void print();
     
 
@@ -95,12 +95,21 @@ inline string EnergyData::quotRemover(string& str)
     return str.substr(1, str.length()-2);
 }
 
-    void EnergyData::mergeSort(int year, int type)
+    void EnergyData::mergeSort(int year, string type)
 {
+	vector<pair(string, float)> states;
+	for(auto i:dataPoints)
+	{
+		if(i.Year == year)
+		{
+			states.push_back(make_pair(i.State,i.catData.find(type)));
+		}
+	}
+
 	
 }
 
-    void EnergyData::mergeSort(int year, int type)
+    void EnergyData::mergeSort(int year, string type)
 {
-
+	vector<pair(string, int)> states;
 }
