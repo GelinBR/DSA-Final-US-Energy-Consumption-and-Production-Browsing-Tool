@@ -72,10 +72,12 @@ int main() {
     while (true) {
         std::cout << "Enter consumption method: ";
         std::cin >> consumptionMethod;
+        cout << endl;
 
         if (isValidType(consumptionMethod)) {
             break;
-        } else {
+        }
+        else {
             std::cout << "Invalid consumption method. Please try again.\n";
         }
     }
@@ -85,18 +87,48 @@ int main() {
 
     // Get and validate user input for consumption method
     while (true) {
-        std::cout << "Enter energy type: ";
-        std::cin >> energyType;
+        cout << "Enter energy type: ";
+        cin >> energyType;
+        cout << endl;
 
         if (isValidMethod(consumptionMethod, energyType)) {
             break;
-        } else {
-            std::cout << "Invalid energy type. Please try again.\n";
+        }
+        else {
+            cout << "Invalid energy type. Please try again.\n";
+        }
+    }
+
+    int year;
+    // Get and validate the user input for the year
+    while (true)
+    {
+        cout << "Enter the year from 1960 to 2019: ";
+        cin >> year;
+        cout << endl;
+        if (year >= 1960 && year <= 2019)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Invalid year. please try again." << endl;
         }
     }
 
     //concatenate Consumption.consumptionMethod.energyType
-    //call each sortings function(quick sort and Merge sort)
+    string type = "Consumption." + consumptionMethod + "." + energyType;
 
-	return 0;
+    //call each sortings function(quick sort and Merge sort)
+    dataset.createList(year, type);
+    dataset.mergeSort(dataset.states, 0, dataset.states.size() - 1);
+    cout << "Merge Sort" << endl;
+    dataset.print();
+    cout << endl << endl;
+    dataset.createList(year, type);
+    dataset.quickSort(dataset.states, 0, dataset.states.size() - 1);
+    cout << "Quick Sort" << endl;
+    dataset.print();
+
+    return 0;
 }
