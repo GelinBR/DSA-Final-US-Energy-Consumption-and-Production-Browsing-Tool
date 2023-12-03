@@ -95,7 +95,7 @@ int main() {
         }
     }
 
-    //concatenate Consumption.energyType.consumptionMethod
+    //concatenate Consumption.consumptionMethod.energyType
     //call each sortings function(quick sort and Merge sort)
 
 	return 0;
