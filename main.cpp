@@ -99,14 +99,29 @@ int main() {
         }
     }
 
-    int year;
+    int year = 0;
+    string temp;
+    bool isNum;
     // Get and validate the user input for the year
     while (true)
     {
         cout << "Enter the year from 1960 to 2019: ";
-        cin >> year;
-        cout << endl;
-        if (year >= 1960 && year <= 2019)
+        cin >> temp;
+        year = 0;
+        isNum = true;
+        for (auto i : temp)
+        {
+            if (!isdigit(i))
+            {
+                isNum = false;
+            }
+        }
+
+        if (isNum)
+        {
+            year = stoi(temp);
+        }
+        if (isNum && year >= 1960 && year <= 2019)
         {
             break;
         }
