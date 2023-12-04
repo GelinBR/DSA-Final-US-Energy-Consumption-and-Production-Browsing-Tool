@@ -69,15 +69,11 @@ EnergyData::~EnergyData()
 
 inline void EnergyData::print()
 {
-    //for (EnergyDataPoint dp : dataPoints) {
-    //    dp.print();
-    //    cout << endl;
-    //}
     for (auto i : states)
     {
         cout << i.first << ": " << i.second << endl;
     }
-    cout << "Time to sort" << clock() - time;
+    cout << "Time to sort: " << clock() - time << " milliseconds." << endl;
 }
 
 inline EnergyDataPoint EnergyData::makeLineToDataPoint(string& line, vector<string>& headers)
@@ -112,6 +108,7 @@ inline string EnergyData::quotRemover(string& str)
 
 inline void EnergyData::createList(int year, string type)
 {
+    states.clear();
     for (auto i : dataPoints)
     {
         if (i.Year == year)
