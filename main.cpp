@@ -137,7 +137,7 @@ int main() {
     //call each sortings function(quick sort and Merge sort)
     dataset.createList(year, type);
     dataset.mergeSort(dataset.states, 0, dataset.states.size() - 1);
-    cout << "Merge Sort" << endl;
+    cout << endl << "Merge Sort" << endl;
     dataset.print();
     cout << endl << endl;
     dataset.createList(year, type);
