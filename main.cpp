@@ -145,5 +145,14 @@ int main() {
     cout << "Quick Sort" << endl;
     dataset.print();
 
+    string response = "";
+    cout << endl << "Do you wish to re-run? Type: y" << endl;
+    cin >> response;
+    if (response == "y")
+    {
+        cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+        main();
+    }
+
     return 0;
 }
